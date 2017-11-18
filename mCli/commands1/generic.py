@@ -1,4 +1,4 @@
-from commands.base import Command
+from mCli.commands.base import Command
 
 
 class exit1(Command):

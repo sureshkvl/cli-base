@@ -9,9 +9,9 @@ from prompt_toolkit.completion import Completer, Completion
 from prompt_toolkit.validation import Validator, ValidationError
 from prompt_toolkit.contrib.completers import WordCompleter
 
-from utils import eventloop
-from libs.style import default as default_style
-from libs.cmdmanager import CommandManager
+from mCli.utils import eventloop
+from mCli.libs.style import default as default_style
+from mCli.libs.cmdmanager import CommandManager
 
 
 class Shell(object):

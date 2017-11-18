@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 import os
 import sys
 from six import text_type
-from libs.shell import Shell
+from mCli.libs.shell import Shell
 
 def main():
     argv = sys.argv[1:]

@@ -12,7 +12,7 @@ import os
 #import logging
 #import re
 
-from commands.base import Command
+from mCli.commands.base import Command
 
 
 def eventloop():

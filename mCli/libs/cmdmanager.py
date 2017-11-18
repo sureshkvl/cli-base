@@ -7,8 +7,8 @@ from six import add_metaclass, text_type
 import argparse
 import re
 
-from utils import get_resource_classes, Singleton
-from commands.base import Command
+from mCli.utils import get_resource_classes, Singleton
+from mCli.commands.base import Command
 
 
 @add_metaclass(abc.ABCMeta)
