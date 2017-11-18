@@ -17,15 +17,14 @@ class ArgumentParser(argparse.ArgumentParser):
 class Command(object):
     """Base class for commands
     """
-    description = ""
+    description = "One line description about this Command"
     """Description of the command"""
-    aliases = []
-    """Command aliases"""
-    _options = None
-    _args = None
+    details = """
+    Detailed help to be filled here
+    """
 
     @abc.abstractmethod
-    def __call__(self, **kwargs):
+    def __call__(self, args):
         """Command must implement this method.
 
         The command must return an unicode string

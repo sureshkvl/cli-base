@@ -1,4 +1,4 @@
-from base import Command
+from commands.base import Command
 
 
 class exit(Command):
@@ -8,21 +8,21 @@ class exit(Command):
     Arguments: None
     '''
 
-    def __call__(self):
+    def __call__(self, args):
         raise EOFError
 
 
 class add(Command):
-    description = "add  - add two numbers ,return result"
+    description = "Adds two integer numbers"
     details = '''
-    Add two numbers
+    Adds two integer numbers and return the result.
     Args: a  b
     type: interger
     return: result
-    Example:   add 10 20
+    Example:  add 10 20
     '''
 
-    def __call__(self):
+    def __call__(self, args):
         return "Hello Command Returned"
 
 
@@ -35,16 +35,5 @@ class test(Command):
     return: result
     Example:   add 10 20
     '''
-    def __call__(self):
-        return "Test Command Executed"
-
-class help(Command):
-    description = "help command"
-    details = '''
-    Help Command
-    Args: None
-    '''
-
-    def __call__(self):
-        return self.list()
+    def __call__(self, args):
         return "Test Command Executed"

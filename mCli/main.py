@@ -1,15 +1,14 @@
 from __future__ import unicode_literals
 import os
 import sys
-#import argparse
-#import logging
-#import logging.config
 from six import text_type
 from libs.shell import Shell
 
 def main():
     argv = sys.argv[1:]
-    cli = Shell()
+    cpath = "mCli/commands"
+    cprefix = "commands."
+    cli = Shell(appname="suresh-cli",symbol="#",cmdpath=cpath,cmdprefix=cprefix)
     cli()
     print "exiting"
 
