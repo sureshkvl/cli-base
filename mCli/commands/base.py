@@ -7,12 +7,6 @@ from six import add_metaclass, text_type
 import argparse
 
 
-class ArgumentParser(argparse.ArgumentParser):
-
-    def exit(self, status=0, message=None):
-        raise CommandError(message or '')
-
-
 @add_metaclass(abc.ABCMeta)
 class Command(object):
     """Base class for commands

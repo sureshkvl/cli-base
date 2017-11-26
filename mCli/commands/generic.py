@@ -1,5 +1,6 @@
 from mCli.commands.base import Command
-
+from mCli.resources.ssh import ssh
+import sys
 
 class exit(Command):
     description = "Exit from the CLI"
@@ -9,7 +10,7 @@ class exit(Command):
     '''
 
     def __call__(self, args):
-        raise EOFError
+        sys.exit()
 
 
 class add(Command):
@@ -23,7 +24,10 @@ class add(Command):
     '''
 
     def __call__(self, args):
-        return "Hello Command Returned"
+        result = 0
+        for item in args:
+            result += int(item)
+        return "Result " + str(result)
 
 
 class test(Command):
@@ -35,5 +39,29 @@ class test(Command):
     return: result
     Example:   add 10 20
     '''
+
     def __call__(self, args):
-        return "Test Command Executed"
+        return "Test Command Executed with args " + str(args)
+
+
+class runInRemoteServer(Command):
+    description = "Execute the script in Remote Server"
+    details = '''
+    Copy a script file in the remote server and run the script file(application)
+    Args: <serverip>  <username> <keyfile>  <filename>
+    return: pid
+    Example:   runInRemoteServer 10.1.1.5 root  /home/suresh/test_key.rsa testpython.py
+    '''
+
+    def validate(self, args):
+        return True
+
+
+    def __call__(self, args):
+        if validate(args) is True:
+            ssh1 = ssh(ip=args[0],key=args[2],user=args[1])
+            ssh1.scp_put(src=args[3],dst="/tmp/runner.py")
+            result = ssh1.run_cmd(command="./tmp/runner.py")
+            return result
+        else:
+            return "ERROR: Invalid Arguments \n" + description + "\n" + details
