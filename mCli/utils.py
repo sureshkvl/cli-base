@@ -13,7 +13,7 @@ import os
 #import re
 
 from mCli.commands.base import Command
-from mCli.resources.ssh import ssh
+#from mCli.resources.ssh import ssh
 
 def eventloop():
     # Allow to keep gevent greenlets running

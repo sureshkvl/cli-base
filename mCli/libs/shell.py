@@ -19,11 +19,12 @@ from mCli.libs.cmdmanager import CommandManager
 class Shell(object):
     description = "Run an interactive shell"
 
-    def __init__(self, appname="M-Cli", symbol=">", cmdpath=None, cmdprefix=None):
+    def __init__(self, appname="M-Cli", symbol=">", cmdpath=None, cmdprefix=None, toolbarmsg="Toolbar"):
         self.appname = appname
         self.symbol = symbol
         self.cmdpath = cmdpath
         self.cmdprefix = cmdprefix
+        self.toolbarmsg = toolbarmsg
         self.CMgr = CommandManager(path=self.cmdpath, prefix=self.cmdprefix)
 
     def __call__(self):
@@ -34,7 +35,7 @@ class Shell(object):
                 ]
 
         def get_bottom_toolbar_tokens(cli):
-            return [(Token.Toolbar, ' This is a toolbar. ')]
+            return [(Token.Toolbar, self.toolbarmsg)]
 
 
         my_completer = WordCompleter(self.CMgr.list("*"))

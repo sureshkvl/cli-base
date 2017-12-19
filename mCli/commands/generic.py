@@ -58,7 +58,7 @@ class runInRemoteServer(Command):
 
 
     def __call__(self, args):
-        if validate(args) is True:
+        if self.validate(args) is True:
             ssh1 = ssh(ip=args[0],key=args[2],user=args[1])
             ssh1.scp_put(src=args[3],dst="/tmp/runner.py")
             result = ssh1.run_cmd(command="./tmp/runner.py")

@@ -14,5 +14,5 @@ default = style_from_dict({
     Token.Menu.Completions.MultiColumnMeta: 'bg:#aaaaaa #000000',
     Token.Menu.Completions.ProgressBar: 'bg:#74B3CC',
     Token.Menu.Completions.ProgressButton: 'bg:#274B7A',
-    Token.Toolbar, '#ffffff bg:#333333',
+    Token.Toolbar: '#ffffff bg:#333333',
 })

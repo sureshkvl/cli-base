@@ -62,9 +62,12 @@ class CommandManager(Singleton, object):
     def execute(self, cmdname):
         # cmd may have mutliple parts  . first part is cmd, remaining parts are args
         cmd = cmdname.split()
+        x = len(cmd)
+        # No Command entered, user pressed enter
+        if x == 0:
+            return
         # populating args for commands
         args = []
-        x = len(cmd)
         if x != 0:
             args += cmd[1:]
 

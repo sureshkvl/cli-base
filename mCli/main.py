@@ -4,7 +4,9 @@ import sys
 from six import text_type
 from mCli.libs.shell import Shell
 
-def main():
+def main(argv):
+	parser = argparse.ArgumentParser("Knet Test app")
+	parser.add_argument("--input-file", required=True, help="connections Step")
     argv = sys.argv[1:]
     cpath = "mCli/commands"
     cprefix = "commands."
@@ -13,4 +15,4 @@ def main():
     print "exiting"
 
 if __name__ == "__main__":
-    main()        
+    main(sys.argv)        
