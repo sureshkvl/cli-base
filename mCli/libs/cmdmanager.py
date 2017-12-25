@@ -65,7 +65,7 @@ class CommandManager(Singleton, object):
         x = len(cmd)
         # No Command entered, user pressed enter
         if x == 0:
-            return
+            return None
         # populating args for commands
         args = []
         if x != 0:

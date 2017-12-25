@@ -19,7 +19,8 @@ from mCli.libs.cmdmanager import CommandManager
 class Shell(object):
     description = "Run an interactive shell"
 
-    def __init__(self, appname="M-Cli", symbol=">", cmdpath=None, cmdprefix=None, toolbarmsg="Toolbar"):
+    def __init__(self, hdr=None, appname="M-Cli", symbol=">", cmdpath=None, cmdprefix=None, toolbarmsg="Toolbar"):
+        self.hdr = hdr
         self.appname = appname
         self.symbol = symbol
         self.cmdpath = cmdpath
@@ -40,10 +41,12 @@ class Shell(object):
 
         my_completer = WordCompleter(self.CMgr.list("*"))
         history = InMemoryHistory()
+        if self.hdr:
+            print self.hdr
         while True:
             try:
                 action = prompt(get_prompt_tokens=get_default_prompt_tokens,
-                                get_bottom_toolbar_tokens=get_bottom_toolbar_tokens,
+                                # get_bottom_toolbar_tokens=get_bottom_toolbar_tokens,
                                 style=default_style,
                                 completer=my_completer,
                                 history=history,
@@ -53,7 +56,9 @@ class Shell(object):
             except (EOFError, KeyboardInterrupt):
                 break
             try:
-                print self.CMgr.execute(action)
+                resp = self.CMgr.execute(action)
+                if resp:
+                    print resp
             except (EOFError, KeyboardInterrupt):
                 break
 
