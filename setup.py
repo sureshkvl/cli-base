@@ -11,7 +11,7 @@ install_requires = [
 test_requires = []
 
 setup(
-    name='miniCli',
+    name='mCli',
     version='0.1',
     description="CLI framework for automation scripts",
     author="S.Suresh Kumar",
