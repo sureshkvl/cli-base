@@ -12,20 +12,22 @@ test_requires = []
 
 setup(
     name='mCli',
-    version='1.0.0',
+    version='1.0.1',
     description="CLI framework for automation scripts",
     author="S.Suresh Kumar",
     author_email="sureshkumarr.s@gmail.com",
     url="https://github.com/sureshkvl/mCli",
-    packages=find_packages(),
+    download_url="https://github.com/sureshkvl/mCli/archieve/1.0.1.tar.gz",
+    packages=['mCli'],
     include_package_data=True,
     install_requires=install_requires,
+    keywords=['cli', 'automation', 'testing'],
     scripts=[],
     license="Apache",
     entry_points={
     },
     classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 1 - Stable',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: User Interfaces',
         'License :: OSI Approved :: MIT License',
