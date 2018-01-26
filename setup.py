@@ -2,17 +2,17 @@ from setuptools import setup
 from setuptools import find_packages
 
 install_requires = [
-    'pygments',
-    'prompt_toolkit',
-    'gevent',
-    'importlib',
-    'termcolor'
+    'pygments==2.2.0',
+    'prompt_toolkit==1.0.15',
+    'gevent==1.2.2',
+    'importlib==1.0.4',
+    'termcolor==1.1.0'
 ]
 test_requires = []
 
 setup(
     name='mCli',
-    version='0.1',
+    version='1.0.0',
     description="CLI framework for automation scripts",
     author="S.Suresh Kumar",
     author_email="sureshkumarr.s@gmail.com",
@@ -29,7 +29,6 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: User Interfaces',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4'
+        'Programming Language :: Python :: 2.7'
     ]
 )

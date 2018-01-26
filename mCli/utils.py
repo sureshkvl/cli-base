@@ -6,14 +6,8 @@ import pkgutil
 import importlib
 import os
 
-
-#import copy
-#import functools
-#import logging
-#import re
-
 from mCli.commands.base import Command
-#from mCli.resources.ssh import ssh
+
 
 def eventloop():
     # Allow to keep gevent greenlets running
@@ -56,11 +50,10 @@ class Singleton(object):
             class_._instance = object.__new__(class_, *args, **kwargs)
         return class_._instance
 
-
+'''
 if __name__ == "__main__":
     path = "mCli/commands"
-    #path = "mCli/commands1"
     prefix = "commands."
     print get_resource_classes(path,prefix)
     print get_resource_classes()
-
+'''

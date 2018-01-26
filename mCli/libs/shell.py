@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 import os.path
 from six import text_type
-#from pygments.token import Token
 from prompt_toolkit.token import Token
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import Completer, Completion

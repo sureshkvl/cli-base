@@ -17,7 +17,7 @@ class CommandManager(Singleton, object):
     """
     description = ""
 
-    def __init__(self,path=None,prefix=None):
+    def __init__(self, path=None, prefix=None):
         # Load the Commands Subclasses
         self.cmdcls = get_resource_classes(path, prefix)
         self.commands = [c.__name__ for c in self.cmdcls]
